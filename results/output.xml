@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170813 17:35:09.400" generator="Robot 3.0.2 (Python 2.7.12 on win32)">
+<suite source="C:\Users\Mike\PycharmProjects\Maps_Robot\SmokeTest.robot" id="s1" name="SmokeTest">
+<test id="s1-t1" name="Verify Response Status Code">
+<kw name="Get Status Code" library="myLibrary">
+<arguments>
+<arg>${search_address}</arg>
+</arguments>
+<assign>
+<var>${CODE}</var>
+</assign>
+<msg timestamp="20170813 17:35:10.309" level="INFO">Starting new HTTPS connection (1): maps.googleapis.com</msg>
+<msg timestamp="20170813 17:35:10.724" level="INFO">Response Status Code: 200</msg>
+<msg timestamp="20170813 17:35:10.724" level="INFO">${CODE} = 200</msg>
+<status status="PASS" endtime="20170813 17:35:10.724" starttime="20170813 17:35:10.308"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${CODE}</arg>
+<arg>${STATUS_CODE_200}</arg>
+</arguments>
+<msg timestamp="20170813 17:35:10.725" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170813 17:35:10.725" starttime="20170813 17:35:10.725"></status>
+</kw>
+<doc>Checking response status code</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170813 17:35:10.725" critical="yes" starttime="20170813 17:35:10.307"></status>
+</test>
+<test id="s1-t2" name="Verify Response Status">
+<kw name="Get Status" library="myLibrary">
+<arguments>
+<arg>${search_address}</arg>
+</arguments>
+<assign>
+<var>${STATUS}</var>
+</assign>
+<msg timestamp="20170813 17:35:10.729" level="INFO">Starting new HTTPS connection (1): maps.googleapis.com</msg>
+<msg timestamp="20170813 17:35:11.212" level="INFO">Response Status: OK</msg>
+<msg timestamp="20170813 17:35:11.212" level="INFO">${STATUS} = OK</msg>
+<status status="PASS" endtime="20170813 17:35:11.212" starttime="20170813 17:35:10.727"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${STATUS}</arg>
+<arg>${STATUS_OK}</arg>
+</arguments>
+<status status="PASS" endtime="20170813 17:35:11.213" starttime="20170813 17:35:11.212"></status>
+</kw>
+<doc>Checking response status</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170813 17:35:11.213" critical="yes" starttime="20170813 17:35:10.727"></status>
+</test>
+<test id="s1-t3" name="Verify Address">
+<kw name="Get Address" library="myLibrary">
+<arguments>
+<arg>${search_address}</arg>
+</arguments>
+<assign>
+<var>${ADDRESS}</var>
+</assign>
+<msg timestamp="20170813 17:35:11.216" level="INFO">Starting new HTTPS connection (1): maps.googleapis.com</msg>
+<msg timestamp="20170813 17:35:11.570" level="INFO">address: San Jose, CA 95117, USA</msg>
+<msg timestamp="20170813 17:35:11.570" level="INFO">${ADDRESS} = San Jose, CA 95117, USA</msg>
+<status status="PASS" endtime="20170813 17:35:11.570" starttime="20170813 17:35:11.214"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${ADDRESS}</arg>
+<arg>${EXPECTED_ADDRESS}</arg>
+</arguments>
+<status status="PASS" endtime="20170813 17:35:11.571" starttime="20170813 17:35:11.571"></status>
+</kw>
+<doc>Checking response address</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170813 17:35:11.572" critical="yes" starttime="20170813 17:35:11.214"></status>
+</test>
+<test id="s1-t4" name="Verify Place ID">
+<kw name="Get Place Id" library="myLibrary">
+<arguments>
+<arg>${search_address}</arg>
+</arguments>
+<assign>
+<var>${PLACE_ID}</var>
+</assign>
+<msg timestamp="20170813 17:35:11.575" level="INFO">Starting new HTTPS connection (1): maps.googleapis.com</msg>
+<msg timestamp="20170813 17:35:11.909" level="INFO">place_id: ChIJ4YcqPMHKj4AR_oe_L8U_ojs</msg>
+<msg timestamp="20170813 17:35:11.909" level="INFO">${PLACE_ID} = ChIJ4YcqPMHKj4AR_oe_L8U_ojs</msg>
+<status status="PASS" endtime="20170813 17:35:11.909" starttime="20170813 17:35:11.573"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${PLACE_ID}</arg>
+<arg>${EXPECTED_PLACE_ID}</arg>
+</arguments>
+<status status="PASS" endtime="20170813 17:35:11.910" starttime="20170813 17:35:11.910"></status>
+</kw>
+<doc>Checking response place_id</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170813 17:35:11.911" critical="yes" starttime="20170813 17:35:11.572"></status>
+</test>
+<doc>Test Case to search places</doc>
+<status status="PASS" endtime="20170813 17:35:11.912" starttime="20170813 17:35:09.404"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="4">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="SmokeTest" pass="4">SmokeTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
