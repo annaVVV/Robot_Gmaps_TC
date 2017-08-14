@@ -43,19 +43,5 @@ Verify Place ID
 
 
 *** Keywords ***
-#Get Response Status Code
-#  [Arguments]  ${text}
-#  ${code} =  get status code      ${CODE}
-
-#Verify Status Code
-#  [Arguments]  ${app_resp_status_code}
-#  should be equal  ${app_resp_status_code}   ${resp_status_code}
-
-# get_place_id('95117')
-# place_id: ChIJ4YcqPMHKj4AR_oe_L8U_ojs
-
-# get_address('95117')
-# Response Status: OK
-# address: San Jose, CA 95117, USA
 
 
